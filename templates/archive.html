@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}アーカイブ | {{ site_title }}{% endblock %}
+{% block meta_description %}{{ site_title }}の全投稿一覧です。{% endblock %}
+{% block canonical %}{{ site_base_url }}archive.html{% endblock %}
+{% block content %}
+<h1>アーカイブ</h1>
+{% for month, month_posts in months %}
+<section class="archive-month">
+  <h2>{{ month }}</h2>
+  <ul>
+    {% for post in month_posts %}
+    <li><a href="posts/{{ post.date }}.html">{{ post.date }}</a> — {{ post.title }}</li>
+    {% endfor %}
+  </ul>
+</section>
+{% else %}
+<p class="empty">まだ投稿がありません。</p>
+{% endfor %}
+{% endblock %}

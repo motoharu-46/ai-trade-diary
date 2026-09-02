@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}{{ site_title }}{% endblock %}
+{% block meta_description %}{{ site_description }}{% endblock %}
+{% block canonical %}{{ site_base_url }}{% endblock %}
+{% block content %}
+<section class="hero">
+  <h1>{{ site_title }}</h1>
+  <p>{{ site_description }}</p>
+</section>
+
+{% if latest %}
+<section class="latest-summary">
+  <h2>最新の運用状況（{{ latest.date }} 時点）</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="label">累計実現損益</div>
+      <div class="value {{ 'pos' if latest.stats.cumulative_realized_pnl_jpy >= 0 else 'neg' }}">{{ "{:+,.0f}".format(latest.stats.cumulative_realized_pnl_jpy) }}円</div>
+    </div>
+    <div class="card">
+      <div class="label">累計勝率</div>
+      <div class="value">{{ "%.1f"|format(latest.stats.cumulative_win_rate_pct) ~ "%" if latest.stats.cumulative_win_rate_pct is not none else "―" }}</div>
+    </div>
+    <div class="card">
+      <div class="label">累計決済件数</div>
+      <div class="value">{{ latest.stats.cumulative_closed_count }}件</div>
+    </div>
+    <div class="card">
+      <div class="label">保有中</div>
+      <div class="value">{{ latest.stats.open_positions_count }}件</div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="post-list">
+  <h2>更新履歴</h2>
+  {% for post in posts %}
+  <article class="post-list-item">
+    <p class="post-date"><a href="posts/{{ post.date }}.html">{{ post.date }}</a></p>
+    <h3><a href="posts/{{ post.date }}.html">{{ post.title }}</a></h3>
+    <p class="excerpt">{{ post.lead }}</p>
+  </article>
+  {% else %}
+  <p class="empty">まだ投稿がありません。</p>
+  {% endfor %}
+  <p class="archive-link"><a href="archive.html">過去の投稿をすべて見る &raquo;</a></p>
+</section>
+{% endblock %}

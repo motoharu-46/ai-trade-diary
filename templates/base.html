@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ site_title }}{% endblock %}</title>
+<meta name="description" content="{% block meta_description %}{{ site_description }}{% endblock %}">
+<link rel="canonical" href="{% block canonical %}{{ site_base_url }}{% endblock %}">
+<link rel="alternate" type="application/rss+xml" title="{{ site_title }}" href="{{ site_base_url }}feed.xml">
+<link rel="stylesheet" href="{{ asset_prefix }}assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="site-title" href="{{ asset_prefix }}index.html">{{ site_title }}</a>
+  <nav class="site-nav">
+    <a href="{{ asset_prefix }}index.html">トップ</a>
+    <a href="{{ asset_prefix }}archive.html">アーカイブ</a>
+    <a href="{{ asset_prefix }}about.html">運営者情報</a>
+    <a href="{{ asset_prefix }}disclaimer.html">免責事項</a>
+  </nav>
+</header>
+<main class="site-main">
+{% block content %}{% endblock %}
+</main>
+<footer class="site-footer">
+  <div class="disclaimer-snippet">
+    本サイトはkabuステーションAPIとClaude APIを用いたペーパートレード（仮想シミュレーション、実発注は一切行っていません）の検証記録です。投資助言ではありません。詳しくは<a href="{{ asset_prefix }}disclaimer.html">免責事項</a>をご確認ください。
+  </div>
+  <nav class="footer-nav">
+    <a href="{{ asset_prefix }}disclaimer.html">免責事項</a>
+    <a href="{{ asset_prefix }}privacy.html">プライバシーポリシー</a>
+    <a href="{{ asset_prefix }}about.html">運営者情報</a>
+    <a href="{{ asset_prefix }}feed.xml">RSS</a>
+  </nav>
+  <p class="copyright">&copy; {{ current_year }} {{ operator_name }}</p>
+</footer>
+</body>
+</html>

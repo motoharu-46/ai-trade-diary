@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://motoharu-46.github.io/ai-trade-diary/sitemap.xml

@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% block title %}{{ record.title }} | {{ site_title }}{% endblock %}
+{% block meta_description %}{{ record.meta_description }}{% endblock %}
+{% block canonical %}{{ site_base_url }}posts/{{ record.date }}.html{% endblock %}
+{% block content %}
+<article class="post">
+  <p class="post-date">{{ date_ja }}</p>
+  <h1>{{ record.title }}</h1>
+  <p class="lead">{{ record.lead }}</p>
+
+  {% if record.used_fallback %}
+  <p class="notice">※本日はAIによる記事生成が利用できなかったため、簡易版（数値のみの定型フォーマット）で掲載しています。</p>
+  {% endif %}
+
+  <div class="cards">
+    <div class="card">
+      <div class="label">本日の決済件数</div>
+      <div class="value">{{ record.stats.closed_today_count }}件</div>
+    </div>
+    <div class="card">
+      <div class="label">本日の実現損益</div>
+      <div class="value {{ 'pos' if record.stats.today_realized_pnl_jpy >= 0 else 'neg' }}">{{ "{:+,.0f}".format(record.stats.today_realized_pnl_jpy) }}円</div>
+    </div>
+    <div class="card">
+      <div class="label">本日の勝率</div>
+      <div class="value">{{ "%.1f"|format(record.stats.today_win_rate_pct) ~ "%" if record.stats.today_win_rate_pct is not none else "―" }}</div>
+      <div class="sub">損益分岐: {{ "%.1f"|format(record.stats.breakeven_win_rate_pct) }}%</div>
+    </div>
+    <div class="card">
+      <div class="label">保有中</div>
+      <div class="value">{{ record.stats.open_positions_count }}件</div>
+    </div>
+  </div>
+
+  <h2>累計成績（全期間）</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="label">累計決済件数</div>
+      <div class="value">{{ record.stats.cumulative_closed_count }}件</div>
+    </div>
+    <div class="card">
+      <div class="label">累計実現損益</div>
+      <div class="value {{ 'pos' if record.stats.cumulative_realized_pnl_jpy >= 0 else 'neg' }}">{{ "{:+,.0f}".format(record.stats.cumulative_realized_pnl_jpy) }}円</div>
+    </div>
+    <div class="card">
+      <div class="label">累計勝率</div>
+      <div class="value">{{ "%.1f"|format(record.stats.cumulative_win_rate_pct) ~ "%" if record.stats.cumulative_win_rate_pct is not none else "―" }}</div>
+    </div>
+    <div class="card">
+      <div class="label">運用枠（現在値）</div>
+      <div class="value">{{ "{:,.0f}".format(record.stats.current_equity_jpy) }}円</div>
+      <div class="sub">当初{{ "{:,.0f}".format(record.stats.base_equity_jpy) }}円 + 累計損益</div>
+    </div>
+  </div>
+
+  <div class="charts">
+    <div class="chart-box">
+      <h3>運用枠の推移（全期間）</h3>
+      {{ equity_curve_svg | safe }}
+    </div>
+    <div class="chart-box">
+      <h3>銘柄別 実現損益（本日決済分）</h3>
+      {{ symbol_bar_svg | safe }}
+    </div>
+  </div>
+
+  {% if record.closed_today %}
+  <h2>本日決済したトレード</h2>
+  <div class="table-wrap">
+  <table>
+    <tr><th>銘柄</th><th>エントリー</th><th>決済</th><th>決済理由</th><th>実現損益</th></tr>
+    {% for t in record.closed_today %}
+    <tr>
+      <td>{{ t.symbol_name ~ " (" ~ t.symbol ~ ")" if t.symbol_name else t.symbol }}</td>
+      <td>{{ t.entry_time_jst[11:16] }} {{ "{:,.1f}".format(t.entry_price) }}円</td>
+      <td>{{ t.exit_time_jst[11:16] }} {{ "{:,.1f}".format(t.exit_price) }}円</td>
+      <td>{{ t.exit_reason }}</td>
+      <td class="{{ 'pos' if t.realized_pnl_jpy >= 0 else 'neg' }}">{{ "{:+,.0f}".format(t.realized_pnl_jpy) }}円（{{ "%+.2f"|format(t.realized_pnl_pct) }}%）</td>
+    </tr>
+    {% endfor %}
+  </table>
+  </div>
+  {% else %}
+  <p class="empty">本日決済したトレードはありません。</p>
+  {% endif %}
+
+  {% if record.opened_today_still_open %}
+  <h2>本日新規エントリー（保有継続中）</h2>
+  <div class="table-wrap">
+  <table>
+    <tr><th>銘柄</th><th>エントリー</th><th>判断理由</th></tr>
+    {% for p in record.opened_today_still_open %}
+    <tr>
+      <td>{{ p.symbol_name ~ " (" ~ p.symbol ~ ")" if p.symbol_name else p.symbol }}</td>
+      <td>{{ p.entry_time_jst[11:16] }} {{ "{:,.1f}".format(p.entry_price) }}円</td>
+      <td>{{ p.claude_reason }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  </div>
+  {% endif %}
+
+  <h2>解説</h2>
+  {% for para in record.commentary.split("\n\n") %}
+  {% if para.strip() %}<p>{{ para.strip() }}</p>{% endif %}
+  {% endfor %}
+
+  <div class="warn">
+    <strong>重要な注意事項</strong><br>
+    本記事はkabuステーションAPIとClaude APIを用いた自動売買システムの
+    <strong>ペーパートレード（帳簿上の仮想シミュレーション）</strong>結果です。
+    実際の資金は投じておらず、実発注は一切行っていません。
+    掲載している損益・勝率は実口座の運用成績ではなく、将来の運用成績を
+    保証するものでもありません。投資判断はご自身の責任で行ってください。
+    詳しくは<a href="{{ asset_prefix }}disclaimer.html">免責事項</a>をご覧ください。
+  </div>
+
+  <div class="ad-slot" aria-hidden="true"><!-- AFFILIATE_SLOT: ここにASPの広告タグ・アフィリエイトリンクを挿入する --></div>
+
+  <nav class="post-nav">
+    {% if prev_post %}<a class="prev" href="{{ prev_post.date }}.html">&laquo; {{ prev_post.date }}</a>{% else %}<span></span>{% endif %}
+    {% if next_post %}<a class="next" href="{{ next_post.date }}.html">{{ next_post.date }} &raquo;</a>{% endif %}
+  </nav>
+</article>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}運営者情報 | {{ site_title }}{% endblock %}
+{% block meta_description %}{{ site_title }}の運営者情報です。{% endblock %}
+{% block canonical %}{{ site_base_url }}about.html{% endblock %}
+{% block content %}
+<article class="static-page">
+<h1>運営者情報</h1>
+
+<h2>運営者</h2>
+<p>{{ operator_name }}</p>
+
+<h2>本サイトについて</h2>
+<p>本サイトは、kabuステーションAPIとClaude APIを組み合わせた自動売買システムの
+個人検証プロジェクトです。実際の資金は投じない<strong>ペーパートレード（仮想
+シミュレーション）</strong>の結果を、営業日ごとに記録・公開しています。</p>
+
+<h2>お問い合わせ</h2>
+<p>お問い合わせ方法は準備中です。</p>
+</article>
+{% endblock %}
