@@ -4,5 +4,5 @@
 <link>https://motoharu-46.github.io/ai-trade-diary/</link>
 <description>kabuステーションAPIとClaude APIを組み合わせた自動売買システムのペーパートレード（仮想シミュレーション）検証記録を毎営業日更新しています。</description>
 <language>ja</language>
-<item><title>【システム検証ログ】2026年9月3日の自動売買結果まとめ</title><link>https://motoharu-46.github.io/ai-trade-diary/posts/2026-09-03.html</link><guid>https://motoharu-46.github.io/ai-trade-diary/posts/2026-09-03.html</guid><pubDate>Thu, 03 Sep 2026 02:48:39 +0900</pubDate><description>2026年9月3日はkabuステーションAPIとClaude APIによる仮想シミュレーションでエントリー・決済とも発生せず、保有ポジション2件を継続。累計損益や勝率などの検証状況を客観的に記録します。</description></item>
+<item><title>【システム検証ログ】2026年9月3日の自動売買結果まとめ（取引なし・保有2件継続）</title><link>https://motoharu-46.github.io/ai-trade-diary/posts/2026-09-03.html</link><guid>https://motoharu-46.github.io/ai-trade-diary/posts/2026-09-03.html</guid><pubDate>Thu, 03 Sep 2026 02:56:37 +0900</pubDate><description>2026年9月3日はkabuステーションAPIとClaude APIによるペーパートレード検証で新規エントリー・決済とも発生せず。累計成績や保有ポジションの状況を客観的に記録します。</description></item>
 </channel></rss>
