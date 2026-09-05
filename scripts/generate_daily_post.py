@@ -1,12 +1,18 @@
 """日次記事の生成〜公開を行うエントリポイント。
 
 実行方法:
-    python -m scripts.generate_daily_post [--dry-run] [--force]
+    python -m scripts.generate_daily_post [--dry-run] [--force] [--date YYYY-MM-DD]
 
 --dry-run: docs/・records/をローカルに生成するが、git commit/pushは行わない。
 --force:   その日のrecords/*.jsonが既に存在していても再生成する
            （通常は同日の重複実行によるLLM再呼び出し・重複コミットを防ぐため
            自動的にスキップする）。
+--date:    対象日を指定する（省略時は本日、JST）。タスクスケジューラの登録が
+           遅れた等の理由で投稿が漏れた過去の営業日をバックフィルする用途。
+           `open_positions`（保有中件数）は「実行時点で現在オープン中の
+           ポジション」であり、厳密には「指定日の引け時点のオープン
+           ポジション」ではない点に注意（その日以降に新たな
+           オープン/クローズが発生していれば実行時点の状態とずれる）。
 
 `money_claude/core/trading_calendar.py`の`is_trading_day`と同じロジック
 （`generator/trading_calendar.py`に複製）で非営業日は即終了する。money_claude
@@ -20,6 +26,7 @@ from __future__ import annotations
 import argparse
 import logging
 import sys
+from datetime import date as date_cls
 from datetime import datetime, timedelta, timezone
 
 from generator.article_writer import generate_article
@@ -27,7 +34,7 @@ from generator.config import get_settings
 from generator.data_source import build_daily_stats
 from generator.publisher import PublishError, publish
 from generator.records import build_record, load_all_records, record_exists, write_record
-from generator.site_builder import render_post, rebuild_site
+from generator.site_builder import rebuild_site
 from generator.trading_calendar import is_trading_day
 
 JST = timezone(timedelta(hours=9))
@@ -54,10 +61,13 @@ def main() -> int:
     parser.add_argument(
         "--force", action="store_true", help="既存の当日記録があっても再生成する"
     )
+    parser.add_argument(
+        "--date", type=str, default=None, help="対象日をYYYY-MM-DD形式で指定する（過去日のバックフィル用、省略時は本日）"
+    )
     args = parser.parse_args()
 
     settings = get_settings()
-    target_date = datetime.now(JST).date()
+    target_date = date_cls.fromisoformat(args.date) if args.date else datetime.now(JST).date()
 
     if not is_trading_day(target_date):
         logger.info("%s は非営業日のため投稿をスキップします。", target_date)
@@ -93,7 +103,6 @@ def main() -> int:
     logger.info("記録を保存しました: records/%s.json", record.date)
 
     all_records = load_all_records()
-    render_post(record, stats, settings, all_records)
     rebuild_site(all_records, settings)
     logger.info("サイトを再生成しました（docs/）。")
 

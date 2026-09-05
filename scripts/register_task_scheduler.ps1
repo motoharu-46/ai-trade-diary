@@ -1,4 +1,4 @@
-# blog_claude の日次投稿タスクをWindowsタスクスケジューラへ登録する。
+﻿# blog_claude の日次投稿タスクをWindowsタスクスケジューラへ登録する。
 #
 # money_claude/scripts/register_task_scheduler.ps1 と同様、OSのタスク
 # スケジューラ設定を変更する操作のため、Claudeからは実行しない。内容を

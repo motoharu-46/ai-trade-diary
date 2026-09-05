@@ -8,13 +8,14 @@ RSS・サイトマップ）を再生成する。
 from __future__ import annotations
 
 import html
+from datetime import date as date_cls
 from datetime import datetime, timezone
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from . import charts
 from .config import REPO_ROOT, Settings
-from .data_source import DailyStats
+from .data_source import DailyStats, build_daily_stats
 from .formatting import format_date_ja
 from .records import DailyRecord
 
@@ -78,6 +79,27 @@ def render_post(
     POSTS_DIR.mkdir(parents=True, exist_ok=True)
     output_path = POSTS_DIR / f"{record.date}.html"
     output_path.write_text(template.render(**context), encoding="utf-8")
+
+
+def rerender_all_posts(all_records: list[DailyRecord], settings: Settings) -> None:
+    """記録がある全日について投稿ページを再生成する。
+
+    バックフィル等で過去日の記録が後から追加された場合に、既存日の
+    「次の投稿へ」リンクが更新されないままになる（`render_post`は
+    呼び出し時点の`all_records`しか見ないため）のを防ぐため、日次実行の
+    たびに全件を再生成する。money_claudeのDBは追記のみで過去データは
+    変わらないため、件数が増えても各日の再計算コストは小さい。
+    """
+    for record in all_records:
+        target_date = date_cls.fromisoformat(record.date)
+        stats = build_daily_stats(
+            db_path=settings.money_claude_db_path,
+            target_date=target_date,
+            account_equity_jpy=settings.account_equity_jpy,
+            stop_loss_pct=settings.paper_stop_loss_pct,
+            take_profit_pct=settings.paper_take_profit_pct,
+        )
+        render_post(record, stats, settings, all_records)
 
 
 def render_index(all_records: list[DailyRecord], settings: Settings, recent_count: int = 20) -> None:
@@ -172,9 +194,10 @@ def render_sitemap(all_records: list[DailyRecord], settings: Settings) -> None:
 
 
 def rebuild_site(all_records: list[DailyRecord], settings: Settings) -> None:
-    """投稿一覧に依存するページ群（トップ/アーカイブ/RSS/サイトマップ/静的ページ）を
-    まとめて再生成する。個別の投稿ページ（posts/*.html）は`render_post`で別途生成する。
+    """投稿ページ（prev/next整合性込み）とトップ/アーカイブ/RSS/サイトマップ/
+    静的ページをまとめて再生成する。
     """
+    rerender_all_posts(all_records, settings)
     render_index(all_records, settings)
     render_archive(all_records, settings)
     render_static_pages(settings)

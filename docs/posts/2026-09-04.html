@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【システム検証ログ】2026年9月4日の自動売買結果まとめ｜kabuステーションAPI×Claude API仮想シミュレーション | AIトレード検証日記</title>
+<meta name="description" content="2026年9月4日実施のkabuステーションAPIとClaude APIによる自動売買ペーパートレード検証結果です。決済3件、実現損益+2,690円、勝率33.3%の内容を客観的に記録しています。">
+<link rel="canonical" href="https://motoharu-46.github.io/ai-trade-diary/posts/2026-09-04.html">
+<link rel="alternate" type="application/rss+xml" title="AIトレード検証日記" href="https://motoharu-46.github.io/ai-trade-diary/feed.xml">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="site-title" href="../index.html">AIトレード検証日記</a>
+  <nav class="site-nav">
+    <a href="../index.html">トップ</a>
+    <a href="../archive.html">アーカイブ</a>
+    <a href="../about.html">運営者情報</a>
+    <a href="../disclaimer.html">免責事項</a>
+  </nav>
+</header>
+<main class="site-main">
+<article class="post">
+  <p class="post-date">2026年9月4日（金）</p>
+  <h1>【システム検証ログ】2026年9月4日の自動売買結果まとめ｜kabuステーションAPI×Claude API仮想シミュレーション</h1>
+  <p class="lead">本記事は、kabuステーションAPIとClaude APIを組み合わせた自動売買システムによる仮想シミュレーションの検証ログです。実際の資金は投じておらず、あくまで帳簿上の仮想トレードとして記録・分析しています。2026年9月4日の決済結果と保有中ポジションについてまとめます。</p>
+
+
+  <div class="cards">
+    <div class="card">
+      <div class="label">本日の決済件数</div>
+      <div class="value">3件</div>
+    </div>
+    <div class="card">
+      <div class="label">本日の実現損益</div>
+      <div class="value pos">+2,690円</div>
+    </div>
+    <div class="card">
+      <div class="label">本日の勝率</div>
+      <div class="value">33.3%</div>
+      <div class="sub">損益分岐: 28.6%</div>
+    </div>
+    <div class="card">
+      <div class="label">保有中</div>
+      <div class="value">1件</div>
+    </div>
+  </div>
+
+  <h2>累計成績（全期間）</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="label">累計決済件数</div>
+      <div class="value">16件</div>
+    </div>
+    <div class="card">
+      <div class="label">累計実現損益</div>
+      <div class="value pos">+12,012円</div>
+    </div>
+    <div class="card">
+      <div class="label">累計勝率</div>
+      <div class="value">37.5%</div>
+    </div>
+    <div class="card">
+      <div class="label">運用枠（現在値）</div>
+      <div class="value">1,012,012円</div>
+      <div class="sub">当初1,000,000円 + 累計損益</div>
+    </div>
+  </div>
+
+  <div class="charts">
+    <div class="chart-box">
+      <h3>運用枠の推移（全期間）</h3>
+      <svg viewBox="0 0 600 200" width="100%" height="200" class="chart" role="img" aria-label="累積損益推移">
+  <line x1="30" y1="121.5" x2="570" y2="121.5" stroke="#ccc" stroke-dasharray="4" />
+  <text x="570" y="117.5" font-size="10" text-anchor="end" fill="#888">元本 1,000,000円</text>
+  <line x1="30" y1="164" x2="570" y2="164" stroke="#ccc" />
+  <polyline points="30.0,128.8 66.0,129.5 102.0,135.0 138.0,140.6 174.0,156.9 210.0,164.0 246.0,151.0 282.0,133.9 318.0,120.2 354.0,103.0 390.0,109.9 426.0,46.8 462.0,54.3 498.0,20.0 534.0,27.6 570.0,35.0" fill="none" stroke="#0a7d2c" stroke-width="2" />
+  <line x1="30.0" y1="164" x2="30.0" y2="168" stroke="#999" /><text x="30.0" y="180" font-size="10" text-anchor="middle" fill="#666">08/27</text><line x1="138.0" y1="164" x2="138.0" y2="168" stroke="#999" /><text x="138.0" y="180" font-size="10" text-anchor="middle" fill="#666">09/01</text><line x1="246.0" y1="164" x2="246.0" y2="168" stroke="#999" /><text x="246.0" y="180" font-size="10" text-anchor="middle" fill="#666">09/02</text><line x1="354.0" y1="164" x2="354.0" y2="168" stroke="#999" /><text x="354.0" y="180" font-size="10" text-anchor="middle" fill="#666">09/02</text><line x1="462.0" y1="164" x2="462.0" y2="168" stroke="#999" /><text x="462.0" y="180" font-size="10" text-anchor="middle" fill="#666">09/03</text><line x1="570.0" y1="164" x2="570.0" y2="168" stroke="#999" /><text x="570.0" y="180" font-size="10" text-anchor="middle" fill="#666">09/04</text>
+</svg>
+    </div>
+    <div class="chart-box">
+      <h3>銘柄別 実現損益（本日決済分）</h3>
+      <svg viewBox="0 0 600 72" width="100%" height="72" class="chart" role="img" aria-label="銘柄別実現損益">
+  <line x1="300.0" y1="0" x2="300.0" y2="72" stroke="#ccc" />
+  <rect x="300.0" y="8" width="210.0" height="24" fill="#0a7d2c" /><text x="306.0" y="24.0" font-size="11" text-anchor="start" fill="#222">4564 4,768円</text><rect x="208.5" y="40" width="91.5" height="24" fill="#c0392b" /><text x="294.0" y="56.0" font-size="11" text-anchor="end" fill="#222">593A -2,078円</text>
+</svg>
+    </div>
+  </div>
+
+  <h2>本日決済したトレード</h2>
+  <div class="table-wrap">
+  <table>
+    <tr><th>銘柄</th><th>エントリー</th><th>決済</th><th>決済理由</th><th>実現損益</th></tr>
+    <tr>
+      <td>オンコセラピー・サイエンス (4564)</td>
+      <td>14:59 21.0円</td>
+      <td>09:00 23.0円</td>
+      <td>TAKE_PROFIT</td>
+      <td class="pos">+4,768円（+9.52%）</td>
+    </tr>
+    <tr>
+      <td>ティアフォー (593A)</td>
+      <td>12:46 2,937.0円</td>
+      <td>12:48 2,875.0円</td>
+      <td>STOP_LOSS</td>
+      <td class="neg">-1,054円（-2.11%）</td>
+    </tr>
+    <tr>
+      <td>ティアフォー (593A)</td>
+      <td>12:58 2,984.0円</td>
+      <td>13:15 2,920.0円</td>
+      <td>STOP_LOSS</td>
+      <td class="neg">-1,024円（-2.14%）</td>
+    </tr>
+  </table>
+  </div>
+
+  <h2>本日新規エントリー（保有継続中）</h2>
+  <div class="table-wrap">
+  <table>
+    <tr><th>銘柄</th><th>エントリー</th><th>判断理由</th></tr>
+    <tr>
+      <td>ソフトバンクグループ (9984)</td>
+      <td>09:35 5,356.0円</td>
+      <td>直近1分間で0.68%の株価上昇、37万8千株の出来高急増を検知。適時開示なしでも値動きの事実が存在し、買気配（5357円で300株の買気配）が入っている。板の買い気配が存在し失速兆候がないため、勢いの継続性が読み取れる。デイトレード戦略として追随エントリーの判定基準を満たす。</td>
+    </tr>
+  </table>
+  </div>
+
+  <h2>解説</h2>
+<p>本日の決済件数は3件で、実現損益は+2,690円、勝率は33.3%という結果でした。3件のうち利益が出たのはオンコセラピー・サイエンス（4564）の1件で、残る2件のティアフォー（593A）は損切りとなっています。</p><p>オンコセラピー・サイエンスは14:59に21.0円でエントリーし、翌9:00に設定していた+5.0%到達の利確ラインである23.0円で決済され、実現損益は+4,768円（+9.52%）となりました。エントリー時点では直近1分間で4.76%の株価急騰と200万株規模の出来高急増が検知されており、板情報でも買い気配が優勢な状態が確認されていました。</p><p>一方、ティアフォーは同日中に2回のエントリーが行われましたが、いずれも-2.0%到達の損切り設定に達し決済されています。1回目は2,937.0円でエントリー後、わずか2分で2,875.0円まで下落し-1,054円（-2.11%）、2回目は2,984.0円でエントリー後、2,920.0円で-1,024円（-2.14%）の損失となりました。両建てともエントリー時点では出来高急増と買い気配の厚さが確認されていましたが、その後の値動きは想定と逆方向に推移した形です。</p><p>また、本日新規にエントリーしソフトバンクグループ（9984）は9:35に5,356.0円で建てられ、記事執筆時点でも保有継続中です。直近1分間の株価上昇と出来高急増、買い気配の存在などが検知されての判断となっています。</p><p>累計成績としては、決済件数16件、実現損益+12,012円、勝率37.5%となっており、運用枠は当初の100万円から1,012,012円へと推移しています。これらの数値はあくまでシステムの挙動を検証するための記録であり、将来の成果を保証するものではありません。今後も継続してログを蓄積し、システムの傾向を客観的に観察していきます。</p>
+  <div class="warn">
+    <strong>重要な注意事項</strong><br>
+    本記事はkabuステーションAPIとClaude APIを用いた自動売買システムの
+    <strong>ペーパートレード（帳簿上の仮想シミュレーション）</strong>結果です。
+    実際の資金は投じておらず、実発注は一切行っていません。
+    掲載している損益・勝率は実口座の運用成績ではなく、将来の運用成績を
+    保証するものでもありません。投資判断はご自身の責任で行ってください。
+    詳しくは<a href="../disclaimer.html">免責事項</a>をご覧ください。
+  </div>
+
+  <div class="ad-slot" aria-hidden="true"><!-- AFFILIATE_SLOT: ここにASPの広告タグ・アフィリエイトリンクを挿入する --></div>
+
+  <nav class="post-nav">
+<a class="prev" href="2026-09-03.html">&laquo; 2026-09-03</a>  </nav>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="disclaimer-snippet">
+    本サイトはkabuステーションAPIとClaude APIを用いたペーパートレード（仮想シミュレーション、実発注は一切行っていません）の検証記録です。投資助言ではありません。詳しくは<a href="../disclaimer.html">免責事項</a>をご確認ください。
+  </div>
+  <nav class="footer-nav">
+    <a href="../disclaimer.html">免責事項</a>
+    <a href="../privacy.html">プライバシーポリシー</a>
+    <a href="../about.html">運営者情報</a>
+    <a href="../feed.xml">RSS</a>
+  </nav>
+  <p class="copyright">&copy; 2026 ブログ運営者</p>
+</footer>
+</body>
+</html>
