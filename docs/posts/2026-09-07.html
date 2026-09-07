@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>【システム検証ログ】2026年9月3日の自動売買結果まとめ（取引なし・保有2件継続） | AIトレード検証日記</title>
-<meta name="description" content="2026年9月3日はkabuステーションAPIとClaude APIによるペーパートレード検証で新規エントリー・決済とも発生せず。累計成績や保有ポジションの状況を客観的に記録します。">
-<link rel="canonical" href="https://motoharu-46.github.io/ai-trade-diary/posts/2026-09-03.html">
+<title>【システム検証ログ】2026年9月7日の自動売買結果まとめ｜ソフトバンクグループで利確 | AIトレード検証日記</title>
+<meta name="description" content="2026年9月7日、kabuステーションAPIとClaude APIによるペーパートレード検証結果。ソフトバンクグループの1件決済で実現損益+4,365円、累計17件・勝率41.2%の記録をまとめます。">
+<link rel="canonical" href="https://motoharu-46.github.io/ai-trade-diary/posts/2026-09-07.html">
 <link rel="alternate" type="application/rss+xml" title="AIトレード検証日記" href="https://motoharu-46.github.io/ai-trade-diary/feed.xml">
 <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -21,28 +21,28 @@
 </header>
 <main class="site-main">
 <article class="post">
-  <p class="post-date">2026年9月3日（木）</p>
-  <h1>【システム検証ログ】2026年9月3日の自動売買結果まとめ（取引なし・保有2件継続）</h1>
-  <p class="lead">2026年9月3日のシステム検証ログです。この日は新規のエントリーおよび決済のいずれも発生しませんでした。本記事はkabuステーションAPIとClaude APIを用いた仮想シミュレーションの記録であり、実際の資金は投じていません。</p>
+  <p class="post-date">2026年9月7日（月）</p>
+  <h1>【システム検証ログ】2026年9月7日の自動売買結果まとめ｜ソフトバンクグループで利確</h1>
+  <p class="lead">本記事は、kabuステーションAPIとClaude APIを組み合わせた自動売買システムの検証ログです。実際の資金は投じておらず、帳簿上の仮想シミュレーションとして記録している内容になります。2026年9月7日の決済結果を振り返ります。</p>
 
 
   <div class="cards">
     <div class="card">
       <div class="label">本日の決済件数</div>
-      <div class="value">0件</div>
+      <div class="value">1件</div>
     </div>
     <div class="card">
       <div class="label">本日の実現損益</div>
-      <div class="value pos">+0円</div>
+      <div class="value pos">+4,365円</div>
     </div>
     <div class="card">
       <div class="label">本日の勝率</div>
-      <div class="value">―</div>
+      <div class="value">100.0%</div>
       <div class="sub">損益分岐: 28.6%</div>
     </div>
     <div class="card">
       <div class="label">保有中</div>
-      <div class="value">2件</div>
+      <div class="value">0件</div>
     </div>
   </div>
 
@@ -50,19 +50,19 @@
   <div class="cards">
     <div class="card">
       <div class="label">累計決済件数</div>
-      <div class="value">11件</div>
+      <div class="value">17件</div>
     </div>
     <div class="card">
       <div class="label">累計実現損益</div>
-      <div class="value pos">+1,607円</div>
+      <div class="value pos">+16,377円</div>
     </div>
     <div class="card">
       <div class="label">累計勝率</div>
-      <div class="value">36.4%</div>
+      <div class="value">41.2%</div>
     </div>
     <div class="card">
       <div class="label">運用枠（現在値）</div>
-      <div class="value">1,001,607円</div>
+      <div class="value">1,016,377円</div>
       <div class="sub">当初1,000,000円 + 累計損益</div>
     </div>
   </div>
@@ -82,16 +82,28 @@
       <h3>銘柄別 実現損益（本日決済分）</h3>
       <svg viewBox="0 0 600 40" width="100%" height="40" class="chart" role="img" aria-label="銘柄別実現損益">
   <line x1="300.0" y1="0" x2="300.0" y2="40" stroke="#ccc" />
-  <rect x="300.0" y="8" width="210.0" height="24" fill="#0a7d2c" /><text x="306.0" y="24.0" font-size="11" text-anchor="start" fill="#222">593A 7,715円</text>
+  <rect x="300.0" y="8" width="210.0" height="24" fill="#0a7d2c" /><text x="306.0" y="24.0" font-size="11" text-anchor="start" fill="#222">9984 4,365円</text>
 </svg>
     </div>
   </div>
 
-  <p class="empty">本日決済したトレードはありません。</p>
+  <h2>本日決済したトレード</h2>
+  <div class="table-wrap">
+  <table>
+    <tr><th>銘柄</th><th>エントリー</th><th>決済</th><th>決済理由</th><th>実現損益</th></tr>
+    <tr>
+      <td>ソフトバンクグループ (9984)</td>
+      <td>09:35 5,356.0円</td>
+      <td>09:05 5,841.0円</td>
+      <td>TAKE_PROFIT</td>
+      <td class="pos">+4,365円（+9.06%）</td>
+    </tr>
+  </table>
+  </div>
 
 
   <h2>解説</h2>
-<p>本日、2026年9月3日は本システムにおいてシグナルの検知がなく、新規のエントリーおよび既存ポジションの決済のいずれも発生しませんでした。決済件数は0件、実現損益も+0円という結果で、取引自体が動かなかった一日となりました。市場環境や個別銘柄の条件が、あらかじめ設定された発注ロジックの基準に合致しなかったためと考えられますが、これはシステムが淡々と条件判定を行った結果であり、特段の異常や不具合を示すものではありません。</p><p>保有中のポジションは2件のままで変化はなく、翌営業日以降の値動きを引き続き観察していく段階です。なお、本記録はkabuステーションAPIとClaude APIを組み合わせたペーパートレードによる仮想シミュレーションであり、実際の資金を用いた発注は一切行っておりません。あくまで検証用の帳簿上の記録である点をご理解ください。</p><p>累計の状況としては、全期間での決済件数は11件、累計実現損益は+1,607円、累計勝率は36.4%となっています。運用枠は当初の100万円から1,001,607円へと推移していますが、これは仮想の帳簿上の数値であり、将来の成績を保証するものではありません。取引が発生しなかった日についても、システムがどのような場面で見送りを選択するかを確認できる点で、検証記録としては意味のある一日だったと言えます。今後も同様に、発生した事実のみを客観的に記録していく方針です。</p>
+<p>本日の決済件数は1件で、対象銘柄はソフトバンクグループ（9984）でした。エントリー時の判断根拠としては、直近1分間で0.68%の株価上昇が確認され、同時に37万8千株規模の出来高急増が検知された点が挙げられます。適時開示は特に出ていない状況でしたが、値動きそのものと出来高の事実を重視し、さらに5,357円で300株の買気配が入っていたことから、板の上での失速兆候がないと判断されました。こうした条件が、デイトレード戦略における追随エントリーの判定基準を満たしたため、システムはエントリーの判断を行っています。</p><p>決済については、あらかじめ設定されていた+5.0%到達のルールに基づき利確が実行されました。結果として実現損益は+4,365円（+9.06%）となり、本日の勝率は100.0%という記録になっています。ただし本日の決済件数は1件のみであり、この結果だけでシステムの傾向を判断することは難しい点に留意が必要です。</p><p>累計の実績を見ると、全期間での決済件数は17件、累計実現損益は+16,377円、累計勝率は41.2%となっています。運用枠は当初の100万円から1,016,377円へと変化していますが、これはあくまで仮想シミュレーション上の帳簿上の数値であり、実際の売買は一切行われていません。保有中のポジションは現在0件で、本日時点で持ち越している取引はない状態です。</p><p>今回のケースでは短時間での価格上昇と出来高の増加という値動きの事実に基づいた判断が行われ、結果として利確につながりましたが、これは特定の銘柄や手法の有効性を示すものではなく、あくまで検証記録の一部として捉えていただければと思います。今後も同様の形で、システムがどのような判断を行い、どのような結果につながったのかを継続的に記録していく予定です。</p>
   <div class="warn">
     <strong>重要な注意事項</strong><br>
     本記事はkabuステーションAPIとClaude APIを用いた自動売買システムの
@@ -105,7 +117,7 @@
   <div class="ad-slot" aria-hidden="true"><!-- AFFILIATE_SLOT: ここにASPの広告タグ・アフィリエイトリンクを挿入する --></div>
 
   <nav class="post-nav">
-<span></span><a class="next" href="2026-09-04.html">2026-09-04 &raquo;</a>  </nav>
+<a class="prev" href="2026-09-04.html">&laquo; 2026-09-04</a>  </nav>
 </article>
 </main>
 <footer class="site-footer">
