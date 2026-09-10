@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>【システム検証ログ】2026年9月7日の自動売買結果まとめ｜ソフトバンクグループで利確 | AIトレード検証日記</title>
-<meta name="description" content="2026年9月7日、kabuステーションAPIとClaude APIによるペーパートレード検証結果。ソフトバンクグループの1件決済で実現損益+4,365円、累計17件・勝率41.2%の記録をまとめます。">
-<link rel="canonical" href="https://motoharu-46.github.io/ai-trade-diary/posts/2026-09-07.html">
+<title>【システム検証ログ】2026年9月10日の自動売買結果まとめ | AIトレード検証日記</title>
+<meta name="description" content="kabuステーションAPIとClaude APIを用いたペーパートレード検証。9月10日はSUMCOと住友電気工業の2件を損切決済し、実現損益-22,800円となった結果を記録します。">
+<link rel="canonical" href="https://motoharu-46.github.io/ai-trade-diary/posts/2026-09-10.html">
 <link rel="alternate" type="application/rss+xml" title="AIトレード検証日記" href="https://motoharu-46.github.io/ai-trade-diary/feed.xml">
 <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -21,28 +21,28 @@
 </header>
 <main class="site-main">
 <article class="post">
-  <p class="post-date">2026年9月7日（月）</p>
-  <h1>【システム検証ログ】2026年9月7日の自動売買結果まとめ｜ソフトバンクグループで利確</h1>
-  <p class="lead">本記事は、kabuステーションAPIとClaude APIを組み合わせた自動売買システムの検証ログです。実際の資金は投じておらず、帳簿上の仮想シミュレーションとして記録している内容になります。2026年9月7日の決済結果を振り返ります。</p>
+  <p class="post-date">2026年9月10日（木）</p>
+  <h1>【システム検証ログ】2026年9月10日の自動売買結果まとめ</h1>
+  <p class="lead">本記事は、kabuステーションAPIとClaude APIを組み合わせた自動売買システムの仮想シミュレーション結果を記録するものです。実際の資金は投じておらず、帳簿上での検証ログとしてご覧ください。</p>
 
 
   <div class="cards">
     <div class="card">
       <div class="label">本日の決済件数</div>
-      <div class="value">1件</div>
+      <div class="value">2件</div>
     </div>
     <div class="card">
       <div class="label">本日の実現損益</div>
-      <div class="value pos">+4,365円</div>
+      <div class="value neg">-22,800円</div>
     </div>
     <div class="card">
       <div class="label">本日の勝率</div>
-      <div class="value">100.0%</div>
+      <div class="value">0.0%</div>
       <div class="sub">損益分岐: 28.6%</div>
     </div>
     <div class="card">
       <div class="label">保有中</div>
-      <div class="value">0件</div>
+      <div class="value">1件</div>
     </div>
   </div>
 
@@ -50,19 +50,19 @@
   <div class="cards">
     <div class="card">
       <div class="label">累計決済件数</div>
-      <div class="value">17件</div>
+      <div class="value">19件</div>
     </div>
     <div class="card">
       <div class="label">累計実現損益</div>
-      <div class="value pos">+16,377円</div>
+      <div class="value neg">-6,423円</div>
     </div>
     <div class="card">
       <div class="label">累計勝率</div>
-      <div class="value">41.2%</div>
+      <div class="value">36.8%</div>
     </div>
     <div class="card">
       <div class="label">運用枠（現在値）</div>
-      <div class="value">1,016,377円</div>
+      <div class="value">993,577円</div>
       <div class="sub">当初1,000,000円 + 累計損益</div>
     </div>
   </div>
@@ -80,9 +80,9 @@
     </div>
     <div class="chart-box">
       <h3>銘柄別 実現損益（本日決済分）</h3>
-      <svg viewBox="0 0 600 40" width="100%" height="40" class="chart" role="img" aria-label="銘柄別実現損益">
-  <line x1="300.0" y1="0" x2="300.0" y2="40" stroke="#ccc" />
-  <rect x="300.0" y="8" width="210.0" height="24" fill="#0a7d2c" /><text x="306.0" y="24.0" font-size="11" text-anchor="start" fill="#222">9984 4,365円</text>
+      <svg viewBox="0 0 600 72" width="100%" height="72" class="chart" role="img" aria-label="銘柄別実現損益">
+  <line x1="300.0" y1="0" x2="300.0" y2="72" stroke="#ccc" />
+  <rect x="114.3" y="8" width="185.7" height="24" fill="#c0392b" /><text x="294.0" y="24.0" font-size="11" text-anchor="end" fill="#222">5802 -10,700円</text><rect x="90.0" y="40" width="210.0" height="24" fill="#c0392b" /><text x="294.0" y="56.0" font-size="11" text-anchor="end" fill="#222">3436 -12,100円</text>
 </svg>
     </div>
   </div>
@@ -92,18 +92,25 @@
   <table>
     <tr><th>銘柄</th><th>エントリー</th><th>決済</th><th>決済理由</th><th>実現損益</th></tr>
     <tr>
-      <td>ソフトバンクグループ (9984)</td>
-      <td>09:35 5,356.0円</td>
-      <td>09:05 5,841.0円</td>
-      <td>TAKE_PROFIT</td>
-      <td class="pos">+4,365円（+9.06%）</td>
+      <td>ＳＵＭＣＯ (3436)</td>
+      <td>09:41 3,134.0円</td>
+      <td>13:25 3,013.0円</td>
+      <td>STOP_LOSS</td>
+      <td class="neg">-12,100円（-3.86%）</td>
+    </tr>
+    <tr>
+      <td>住友電気工業 (5802)</td>
+      <td>09:18 2,204.5円</td>
+      <td>13:25 2,097.5円</td>
+      <td>STOP_LOSS</td>
+      <td class="neg">-10,700円（-4.85%）</td>
     </tr>
   </table>
   </div>
 
 
   <h2>解説</h2>
-<p>本日の決済件数は1件で、対象銘柄はソフトバンクグループ（9984）でした。エントリー時の判断根拠としては、直近1分間で0.68%の株価上昇が確認され、同時に37万8千株規模の出来高急増が検知された点が挙げられます。適時開示は特に出ていない状況でしたが、値動きそのものと出来高の事実を重視し、さらに5,357円で300株の買気配が入っていたことから、板の上での失速兆候がないと判断されました。こうした条件が、デイトレード戦略における追随エントリーの判定基準を満たしたため、システムはエントリーの判断を行っています。</p><p>決済については、あらかじめ設定されていた+5.0%到達のルールに基づき利確が実行されました。結果として実現損益は+4,365円（+9.06%）となり、本日の勝率は100.0%という記録になっています。ただし本日の決済件数は1件のみであり、この結果だけでシステムの傾向を判断することは難しい点に留意が必要です。</p><p>累計の実績を見ると、全期間での決済件数は17件、累計実現損益は+16,377円、累計勝率は41.2%となっています。運用枠は当初の100万円から1,016,377円へと変化していますが、これはあくまで仮想シミュレーション上の帳簿上の数値であり、実際の売買は一切行われていません。保有中のポジションは現在0件で、本日時点で持ち越している取引はない状態です。</p><p>今回のケースでは短時間での価格上昇と出来高の増加という値動きの事実に基づいた判断が行われ、結果として利確につながりましたが、これは特定の銘柄や手法の有効性を示すものではなく、あくまで検証記録の一部として捉えていただければと思います。今後も同様の形で、システムがどのような判断を行い、どのような結果につながったのかを継続的に記録していく予定です。</p>
+<p>2026年9月10日は、2件の決済が行われ、実現損益は-22,800円、勝率は0.0%という結果になりました。いずれも損切設定である-2.0%到達によって決済されており、システムが定めたリスク管理ルールに従った処理が実行された形です。</p><p>ＳＵＭＣＯ（3436）は09:41に3,134.0円でエントリーされました。エントリー根拠としては、直近1分間で株価が0.61%上昇し、出来高が41,700株まで急増したことが検知トリガーとなっています。ニュース材料は特になかったものの、板情報では買値3,135円・売値3,134円と500株ずつの気配が並び、スプレッドが狭く流動性が確保されている状態でした。その後13:25に3,013.0円で損切となり、実現損益は-12,100円（-3.86%）でした。</p><p>住友電気工業（5802）は09:18に2,204.5円でエントリーされています。直近1分間の株価上昇0.57%と出来高564,400株という同時トリガーが検知の根拠となりました。板情報では買気配が2205.0円で10,700株と、売気配を大きく上回る形が確認されており、勢いに乗るデイトレード局面と判定されています。しかし13:25に2,097.5円で損切となり、実現損益は-10,700円（-4.85%）という結果になりました。</p><p>これにより累計決済件数は19件、累計実現損益は-6,423円、累計勝率は36.8%となっています。現在の運用枠は993,577円（当初1,000,000円）で、保有中のポジションは1件です。値動きと出来高を根拠にしたエントリー判断が、必ずしも狙い通りの結果に結びつくわけではないことが、本日のログからも読み取れます。今後も引き続き、システムの挙動を継続的に記録し、検証を重ねていく予定です。</p>
   <div class="warn">
     <strong>重要な注意事項</strong><br>
     本記事はkabuステーションAPIとClaude APIを用いた自動売買システムの
@@ -117,7 +124,7 @@
   <div class="ad-slot" aria-hidden="true"><!-- AFFILIATE_SLOT: ここにASPの広告タグ・アフィリエイトリンクを挿入する --></div>
 
   <nav class="post-nav">
-<a class="prev" href="2026-09-04.html">&laquo; 2026-09-04</a><a class="next" href="2026-09-08.html">2026-09-08 &raquo;</a>  </nav>
+<a class="prev" href="2026-09-09.html">&laquo; 2026-09-09</a>  </nav>
 </article>
 </main>
 <footer class="site-footer">
