@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>【システム検証ログ】2026年9月10日の自動売買結果まとめ | AIトレード検証日記</title>
-<meta name="description" content="kabuステーションAPIとClaude APIを用いたペーパートレード検証。9月10日はSUMCOと住友電気工業の2件を損切決済し、実現損益-22,800円となった結果を記録します。">
-<link rel="canonical" href="https://motoharu-46.github.io/ai-trade-diary/posts/2026-09-10.html">
+<title>【システム検証ログ】2026年9月11日の自動売買結果まとめ | AIトレード検証日記</title>
+<meta name="description" content="2026年9月11日はkabuステーションAPIとClaude APIによる仮想シミュレーションで決済・エントリーともに発生なし。累計成績と保有ポジション状況を客観的に記録します。">
+<link rel="canonical" href="https://motoharu-46.github.io/ai-trade-diary/posts/2026-09-11.html">
 <link rel="alternate" type="application/rss+xml" title="AIトレード検証日記" href="https://motoharu-46.github.io/ai-trade-diary/feed.xml">
 <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -21,23 +21,23 @@
 </header>
 <main class="site-main">
 <article class="post">
-  <p class="post-date">2026年9月10日（木）</p>
-  <h1>【システム検証ログ】2026年9月10日の自動売買結果まとめ</h1>
-  <p class="lead">本記事は、kabuステーションAPIとClaude APIを組み合わせた自動売買システムの仮想シミュレーション結果を記録するものです。実際の資金は投じておらず、帳簿上での検証ログとしてご覧ください。</p>
+  <p class="post-date">2026年9月11日（金）</p>
+  <h1>【システム検証ログ】2026年9月11日の自動売買結果まとめ</h1>
+  <p class="lead">2026年9月11日（金）は、kabuステーションAPIとClaude APIを組み合わせた自動売買システムの仮想シミュレーションにおいて、決済もエントリーも発生しない一日となりました。本記事では、この日の状況と累計の検証結果を淡々と記録します。実資金を用いた取引ではなく、あくまで帳簿上の仮想的な検証であることをあらためて明記しておきます。</p>
 
 
   <div class="cards">
     <div class="card">
       <div class="label">本日の決済件数</div>
-      <div class="value">2件</div>
+      <div class="value">0件</div>
     </div>
     <div class="card">
       <div class="label">本日の実現損益</div>
-      <div class="value neg">-22,800円</div>
+      <div class="value pos">+0円</div>
     </div>
     <div class="card">
       <div class="label">本日の勝率</div>
-      <div class="value">0.0%</div>
+      <div class="value">―</div>
       <div class="sub">損益分岐: 28.6%</div>
     </div>
     <div class="card">
@@ -80,37 +80,15 @@
     </div>
     <div class="chart-box">
       <h3>銘柄別 実現損益（本日決済分）</h3>
-      <svg viewBox="0 0 600 72" width="100%" height="72" class="chart" role="img" aria-label="銘柄別実現損益">
-  <line x1="300.0" y1="0" x2="300.0" y2="72" stroke="#ccc" />
-  <rect x="114.3" y="8" width="185.7" height="24" fill="#c0392b" /><text x="294.0" y="24.0" font-size="11" text-anchor="end" fill="#222">5802 -10,700円</text><rect x="90.0" y="40" width="210.0" height="24" fill="#c0392b" /><text x="294.0" y="56.0" font-size="11" text-anchor="end" fill="#222">3436 -12,100円</text>
-</svg>
+      <p class="empty">データがありません</p>
     </div>
   </div>
 
-  <h2>本日決済したトレード</h2>
-  <div class="table-wrap">
-  <table>
-    <tr><th>銘柄</th><th>エントリー</th><th>決済</th><th>決済理由</th><th>実現損益</th></tr>
-    <tr>
-      <td>ＳＵＭＣＯ (3436)</td>
-      <td>09:41 3,134.0円</td>
-      <td>13:25 3,013.0円</td>
-      <td>STOP_LOSS</td>
-      <td class="neg">-12,100円（-3.86%）</td>
-    </tr>
-    <tr>
-      <td>住友電気工業 (5802)</td>
-      <td>09:18 2,204.5円</td>
-      <td>13:25 2,097.5円</td>
-      <td>STOP_LOSS</td>
-      <td class="neg">-10,700円（-4.85%）</td>
-    </tr>
-  </table>
-  </div>
+  <p class="empty">本日決済したトレードはありません。</p>
 
 
   <h2>解説</h2>
-<p>2026年9月10日は、2件の決済が行われ、実現損益は-22,800円、勝率は0.0%という結果になりました。いずれも損切設定である-2.0%到達によって決済されており、システムが定めたリスク管理ルールに従った処理が実行された形です。</p><p>ＳＵＭＣＯ（3436）は09:41に3,134.0円でエントリーされました。エントリー根拠としては、直近1分間で株価が0.61%上昇し、出来高が41,700株まで急増したことが検知トリガーとなっています。ニュース材料は特になかったものの、板情報では買値3,135円・売値3,134円と500株ずつの気配が並び、スプレッドが狭く流動性が確保されている状態でした。その後13:25に3,013.0円で損切となり、実現損益は-12,100円（-3.86%）でした。</p><p>住友電気工業（5802）は09:18に2,204.5円でエントリーされています。直近1分間の株価上昇0.57%と出来高564,400株という同時トリガーが検知の根拠となりました。板情報では買気配が2205.0円で10,700株と、売気配を大きく上回る形が確認されており、勢いに乗るデイトレード局面と判定されています。しかし13:25に2,097.5円で損切となり、実現損益は-10,700円（-4.85%）という結果になりました。</p><p>これにより累計決済件数は19件、累計実現損益は-6,423円、累計勝率は36.8%となっています。現在の運用枠は993,577円（当初1,000,000円）で、保有中のポジションは1件です。値動きと出来高を根拠にしたエントリー判断が、必ずしも狙い通りの結果に結びつくわけではないことが、本日のログからも読み取れます。今後も引き続き、システムの挙動を継続的に記録し、検証を重ねていく予定です。</p>
+<p>本日の決済件数は0件、実現損益も+0円という結果でした。システムが監視している銘柄群において、エントリー条件・決済条件のいずれにも合致するシグナルが検知されなかったためです。市場が休場だったわけではなく、単純に取引の発生条件を満たす場面がなかった、という一日でした。</p><p>保有中のポジションは引き続き1件となっており、こちらは決済シグナルが出るまで仮想的に保有が継続される形になります。実際の資金を投じているわけではなく、あくまでシステムの判断ロジックを検証するための帳簿上のポジションである点は変わりません。</p><p>累計の実績を振り返ると、これまでの決済件数は19件、累計の実現損益は-6,423円、勝率は36.8%となっています。運用枠は当初の1,000,000円から993,577円へと推移しており、まだ回復には至っていない状況です。数値だけを見れば厳しい局面が続いていますが、こうした無取引日も含めてシステムの挙動を継続的に記録していくこと自体が、この検証の目的の一つです。</p><p>明日以降もシグナルの有無や決済結果を淡々と記録し、累計成績の推移とあわせて随時お伝えしていきます。本記事は特定の売買判断を推奨するものではなく、あくまで自動売買システムの検証ログとしての位置づけである点をあらためてお断りしておきます。</p>
   <div class="warn">
     <strong>重要な注意事項</strong><br>
     本記事はkabuステーションAPIとClaude APIを用いた自動売買システムの
@@ -124,7 +102,7 @@
   <div class="ad-slot" aria-hidden="true"><!-- AFFILIATE_SLOT: ここにASPの広告タグ・アフィリエイトリンクを挿入する --></div>
 
   <nav class="post-nav">
-<a class="prev" href="2026-09-09.html">&laquo; 2026-09-09</a><a class="next" href="2026-09-11.html">2026-09-11 &raquo;</a>  </nav>
+<a class="prev" href="2026-09-10.html">&laquo; 2026-09-10</a>  </nav>
 </article>
 </main>
 <footer class="site-footer">
