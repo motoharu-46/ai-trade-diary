@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-30",
+  "title": "【システム検証ログ】2026年9月30日（水）の自動売買結果まとめ",
+  "meta_description": "2026年9月30日（水）のペーパートレード（仮想シミュレーション）結果。本日の実現損益+0円、決済0件。",
+  "lead": "2026年9月30日（水）のAI自動売買システム（ペーパートレード＝仮想シミュレーション、実発注なし）の検証結果をまとめます。",
+  "commentary": "本日はエントリー・決済とも発生しませんでした。システムが監視を継続する中でシグナル条件に合致する銘柄がなかった、またはシステム側の要因で取引が発生しなかった可能性があります。\n\n累計では27件を決済し、累計実現損益は+12,166円です。この結果はkabuステーションAPIとClaude APIを用いたペーパートレード（帳簿上の仮想シミュレーション）であり、実際の資金は投じていません。投資助言ではなく、将来の運用成績を保証するものでもありません。",
+  "used_fallback": true,
+  "article_error": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CfZGge9Ukod8P5DoY9NZD'}",
+  "raw_response_text": null,
+  "stats": {
+    "closed_today_count": 0,
+    "today_realized_pnl_jpy": 0.0,
+    "today_win_rate_pct": null,
+    "open_positions_count": 0,
+    "cumulative_closed_count": 27,
+    "cumulative_realized_pnl_jpy": 12166.099999999999,
+    "cumulative_win_rate_pct": 37.03703703703704,
+    "current_equity_jpy": 1012166.1,
+    "base_equity_jpy": 1000000.0,
+    "breakeven_win_rate_pct": 28.57142857142857
+  },
+  "closed_today": [],
+  "opened_today_still_open": [],
+  "generated_at_jst": "2026-09-30T17:00:06.571237+09:00"
+}
