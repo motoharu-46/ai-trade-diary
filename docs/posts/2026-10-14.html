@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【システム検証ログ】2026年10月14日の自動売買結果まとめ　取引シグナルなしの一日 | AIトレード検証日記</title>
+<meta name="description" content="2026年10月14日はkabuステーションAPIとClaude APIによる仮想シミュレーションでエントリー・決済とも発生しませんでした。累計成績と合わせて検証状況を振り返ります。">
+<link rel="canonical" href="https://motoharu-46.github.io/ai-trade-diary/posts/2026-10-14.html">
+<link rel="alternate" type="application/rss+xml" title="AIトレード検証日記" href="https://motoharu-46.github.io/ai-trade-diary/feed.xml">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="site-title" href="../index.html">AIトレード検証日記</a>
+  <nav class="site-nav">
+    <a href="../index.html">トップ</a>
+    <a href="../archive.html">アーカイブ</a>
+    <a href="../about.html">運営者情報</a>
+    <a href="../disclaimer.html">免責事項</a>
+  </nav>
+</header>
+<main class="site-main">
+<article class="post">
+  <p class="post-date">2026年10月14日（水）</p>
+  <h1>【システム検証ログ】2026年10月14日の自動売買結果まとめ　取引シグナルなしの一日</h1>
+  <p class="lead">2026年10月14日（水）は、本システムによるエントリー・決済のいずれも発生しない一日となりました。これはkabuステーションAPIとClaude APIを組み合わせた仮想シミュレーションにおける検証結果であり、実際の資金は投じておりません。本日の状況と累計成績を整理してお伝えします。</p>
+
+
+  <div class="cards">
+    <div class="card">
+      <div class="label">本日の決済件数</div>
+      <div class="value">0件</div>
+    </div>
+    <div class="card">
+      <div class="label">本日の実現損益</div>
+      <div class="value pos">+0円</div>
+    </div>
+    <div class="card">
+      <div class="label">本日の勝率</div>
+      <div class="value">―</div>
+      <div class="sub">損益分岐: 28.6%</div>
+    </div>
+    <div class="card">
+      <div class="label">保有中</div>
+      <div class="value">0件</div>
+    </div>
+  </div>
+
+  <h2>累計成績（全期間）</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="label">累計決済件数</div>
+      <div class="value">27件</div>
+    </div>
+    <div class="card">
+      <div class="label">累計実現損益</div>
+      <div class="value pos">+12,166円</div>
+    </div>
+    <div class="card">
+      <div class="label">累計勝率</div>
+      <div class="value">37.0%</div>
+    </div>
+    <div class="card">
+      <div class="label">運用枠（現在値）</div>
+      <div class="value">1,012,166円</div>
+      <div class="sub">当初1,000,000円 + 累計損益</div>
+    </div>
+  </div>
+
+  <div class="charts">
+    <div class="chart-box">
+      <h3>運用枠の推移（全期間）</h3>
+      <svg viewBox="0 0 600 200" width="100%" height="200" class="chart" role="img" aria-label="累積損益推移">
+  <line x1="30" y1="113.0" x2="570" y2="113.0" stroke="#ccc" stroke-dasharray="4" />
+  <text x="570" y="109.0" font-size="10" text-anchor="end" fill="#888">元本 1,000,000円</text>
+  <line x1="30" y1="164" x2="570" y2="164" stroke="#ccc" />
+  <polyline points="30.0,116.8 50.8,117.2 71.5,120.0 92.3,122.9 113.1,131.4 133.8,135.1 154.6,128.3 175.4,119.5 196.2,112.4 216.9,103.4 237.7,107.0 258.5,74.3 279.2,78.2 300.0,60.3 320.8,64.3 341.5,68.1 362.3,51.8 383.1,97.0 403.8,137.0 424.6,153.8 445.4,156.8 466.2,164.0 486.9,130.4 507.7,115.4 528.5,20.0 549.2,52.4 570.0,67.5" fill="none" stroke="#0a7d2c" stroke-width="2" />
+  <line x1="30.0" y1="164" x2="30.0" y2="168" stroke="#999" /><text x="30.0" y="180" font-size="10" text-anchor="middle" fill="#666">08/27</text><line x1="133.8" y1="164" x2="133.8" y2="168" stroke="#999" /><text x="133.8" y="180" font-size="10" text-anchor="middle" fill="#666">09/02</text><line x1="237.7" y1="164" x2="237.7" y2="168" stroke="#999" /><text x="237.7" y="180" font-size="10" text-anchor="middle" fill="#666">09/02</text><line x1="362.3" y1="164" x2="362.3" y2="168" stroke="#999" /><text x="362.3" y="180" font-size="10" text-anchor="middle" fill="#666">09/07</text><line x1="466.2" y1="164" x2="466.2" y2="168" stroke="#999" /><text x="466.2" y="180" font-size="10" text-anchor="middle" fill="#666">09/18</text><line x1="570.0" y1="164" x2="570.0" y2="168" stroke="#999" /><text x="570.0" y="180" font-size="10" text-anchor="middle" fill="#666">09/25</text>
+</svg>
+    </div>
+    <div class="chart-box">
+      <h3>銘柄別 実現損益（本日決済分）</h3>
+      <p class="empty">データがありません</p>
+    </div>
+  </div>
+
+  <p class="empty">本日決済したトレードはありません。</p>
+
+
+  <h2>解説</h2>
+<p>本日2026年10月14日は、システムが監視する銘柄群において、エントリー条件を満たすシグナルが検知されませんでした。その結果、新規の建玉は発生せず、決済件数も0件となっています。保有中のポジションについても現時点で0件であり、本日は売買そのものが行われなかった静かな一日でした。</p><p>相場環境によっては、こうしたシグナル非発生の日が発生することは珍しくありません。本システムはあらかじめ設定された条件に基づいて機械的に判断を行っており、条件に合致しない場合は無理にエントリーを行わない設計になっています。今回のように何も取引が発生しない日も、検証ログとしてありのまま記録しておくことが、今後のシステム評価において重要だと考えています。</p><p>累計成績としては、全期間での決済件数が27件、実現損益は+12,166円、勝率は37.0%となっています。運用枠は当初の1,000,000円から1,012,166円へと推移しています。これらの数値はあくまで仮想シミュレーション上のものであり、実際の売買による資金の増減を示すものではありません。</p><p>本日のように取引が発生しない日も含め、今後も淡々と検証結果を記録し、システムの挙動を継続的に観察していく予定です。本記事は投資助言を目的としたものではなく、あくまでシステムの動作検証を目的とした記録である点にご留意ください。</p>
+  <div class="warn">
+    <strong>重要な注意事項</strong><br>
+    本記事はkabuステーションAPIとClaude APIを用いた自動売買システムの
+    <strong>ペーパートレード（帳簿上の仮想シミュレーション）</strong>結果です。
+    実際の資金は投じておらず、実発注は一切行っていません。
+    掲載している損益・勝率は実口座の運用成績ではなく、将来の運用成績を
+    保証するものでもありません。投資判断はご自身の責任で行ってください。
+    詳しくは<a href="../disclaimer.html">免責事項</a>をご覧ください。
+  </div>
+
+  <div class="ad-slot" aria-hidden="true"><!-- AFFILIATE_SLOT: ここにASPの広告タグ・アフィリエイトリンクを挿入する --></div>
+
+  <nav class="post-nav">
+<a class="prev" href="2026-10-13.html">&laquo; 2026-10-13</a>  </nav>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="disclaimer-snippet">
+    本サイトはkabuステーションAPIとClaude APIを用いたペーパートレード（仮想シミュレーション、実発注は一切行っていません）の検証記録です。投資助言ではありません。詳しくは<a href="../disclaimer.html">免責事項</a>をご確認ください。
+  </div>
+  <nav class="footer-nav">
+    <a href="../disclaimer.html">免責事項</a>
+    <a href="../privacy.html">プライバシーポリシー</a>
+    <a href="../about.html">運営者情報</a>
+    <a href="../feed.xml">RSS</a>
+  </nav>
+  <p class="copyright">&copy; 2026 ブログ運営者</p>
+</footer>
+</body>
+</html>
